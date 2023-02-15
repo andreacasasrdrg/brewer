@@ -1,0 +1,29 @@
+{
+    "name": "brewer",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build-web": "cd web && npm install && npm run build",
+        "start": "node index.js",
+        "start:watch": "nodemon src/index.js",
+        "test": "NODE_OPTIONS=--experimental-vm-modules jest --watchAll"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/andreacasasrdrg/brewer/issues"
+    },
+    "homepage": "https://github.com/andreacasasrdrg/brewer#readme",
+    "dependencies": {
+        "body-parser": "^1.20.1",
+        "express": "^4.17.1",
+        "nodemon": "^2.0.20"
+    },
+    "type": "module",
+    "nodemonConfig": {
+        "ignore": [
+            "**/web/**"
+        ]
+    }
+}
