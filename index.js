@@ -1,13 +1,11 @@
-import bodyParser from 'body-parser'
-import express from 'express'
 import http from 'http'
+import { dbConnect } from './db/dbConnect.js'
+import { app } from "./server/app.js"
+import "./loadEnvironment.js";
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT
 
-const app = express();
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
-
+dbConnect()
 const server = http.createServer(app);
 
 server.on('listening', () => {
